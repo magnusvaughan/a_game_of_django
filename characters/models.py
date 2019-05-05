@@ -18,3 +18,6 @@ class Character(models.Model):
     pov_books = ArrayField(models.CharField(max_length=200), null=True, blank=True)
     played_by = ArrayField(models.CharField(max_length=200), null=True, blank=True)
     tv_series = ArrayField(models.CharField(max_length=200), null=True, blank=True)
+
+    def __str__(self):
+        return self.name[:200]
