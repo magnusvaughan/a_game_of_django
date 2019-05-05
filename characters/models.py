@@ -2,16 +2,16 @@ from django.contrib.postgres.fields import ArrayField
 from django.db import models
 
 class Character(models.Model):
-    name = models.TextField()
+    name = models.CharField(max_length=200, blank=True)
     is_female = models.BooleanField()
-    culture = models.CharField(max_length=200)
+    culture = models.CharField(max_length=200, blank=True)
     titles = ArrayField(models.CharField(max_length=200), blank=True)
     aliases = ArrayField(models.CharField(max_length=200), blank=True)
-    born = models.CharField(max_length=200)
-    died = models.CharField(max_length=200)
-    father = models.CharField(max_length=200)
-    mother = models.CharField(max_length=200)
-    spouse = models.CharField(max_length=200)
+    born = models.CharField(max_length=200, blank=True)
+    died = models.CharField(max_length=200, blank=True)
+    father = models.CharField(max_length=200, blank=True)
+    mother = models.CharField(max_length=200, blank=True)
+    spouse = models.CharField(max_length=200, blank=True)
     children = ArrayField(models.CharField(max_length=200), blank=True)
     allegiances = ArrayField(models.CharField(max_length=200), blank=True)
     books = ArrayField(models.CharField(max_length=200), blank=True)
