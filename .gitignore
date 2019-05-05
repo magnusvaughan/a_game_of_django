@@ -121,5 +121,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-
-a_game_of_django_project/settings.py
+.vscode/
