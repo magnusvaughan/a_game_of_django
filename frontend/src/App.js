@@ -1,7 +1,9 @@
 // App.js
-import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';  
+import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
+import 'react-bootstrap-table2-filter/dist/react-bootstrap-table2-filter.min.css'; 
 import React, { Component } from 'react';
 import BootstrapTable from 'react-bootstrap-table-next';
+import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 
 class App extends Component {
   state = {
@@ -28,7 +30,8 @@ class App extends Component {
     {
       dataField: 'name',
       text: 'Name',
-      sort: true
+      sort: true,
+      filter: textFilter()
     },
     {
       dataField: 'sex',
@@ -87,7 +90,7 @@ class App extends Component {
       text: 'TV Series'
     }];
     return (
-      <BootstrapTable keyField='id' data={ characters } columns={ columns } />
+      <BootstrapTable keyField='id' data={ characters } columns={ columns } filter={ filterFactory() }/>
     )
   }
 }
