@@ -24,9 +24,11 @@ class App extends Component {
 
     const characters = this.state.characters;
 
-    const columns = [{
-      dataField: 'id',
-      text: 'id'
+    const columns = [
+    {
+      dataField: 'name',
+      text: 'Name',
+      sort: true
     },
     {
       dataField: 'sex',
