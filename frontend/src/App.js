@@ -1,5 +1,7 @@
 // App.js
+import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';  
 import React, { Component } from 'react';
+import BootstrapTable from 'react-bootstrap-table-next';
 
 class App extends Component {
   state = {
@@ -19,16 +21,72 @@ class App extends Component {
   }
 
   render() {
+
+    const characters = this.state.characters;
+
+    const columns = [{
+      dataField: 'id',
+      text: 'id'
+    },
+    {
+      dataField: 'sex',
+      text: 'Sex'
+    },
+    {
+      dataField: 'culture',
+      text: 'titles'
+    },
+    {
+      dataField: 'aliases',
+      text: 'Aliases'
+    },
+    {
+      dataField: 'born',
+      text: 'Born'
+    },
+    {
+      dataField: 'died',
+      text: 'Died'
+    },
+    {
+      dataField: 'father',
+      text: 'Father'
+    },
+    {
+      dataField: 'mother',
+      text: 'Mother'
+    },
+    {
+      dataField: 'spouse',
+      text: 'Spouse'
+    },
+    {
+      dataField: 'children',
+      text: 'Children'
+    },
+    {
+      dataField: 'allegiances',
+      text: 'Allegiances'
+    },
+    {
+      dataField: 'books',
+      text: 'Books'
+    },
+    {
+      dataField: 'pov_books',
+      text: 'POV Books'
+    },
+    {
+      dataField: 'played_by',
+      text: 'Played by'
+    },
+    {
+      dataField: 'tv_series',
+      text: 'TV Series'
+    }];
     return (
-      <div>
-        {this.state.characters.map(item => (
-          <div key={item.id}>
-            <h1>{item.name}</h1>
-            <span>{item.culture}</span>
-          </div>
-        ))}
-      </div>
-    );
+      <BootstrapTable keyField='id' data={ characters } columns={ columns } />
+    )
   }
 }
 
